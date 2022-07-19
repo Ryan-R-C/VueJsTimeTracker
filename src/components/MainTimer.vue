@@ -42,7 +42,7 @@ export default defineComponent({
   },
 
   // to emit events to child components
-  emits:['finishCountdownTimer'],
+  emits:['finish-countdown-timer'],
 
   // the initial state is defined here
   data(){
@@ -78,7 +78,7 @@ export default defineComponent({
       clearInterval(this.timeTracker)
 
       //$emit(method, payload)
-      this.$emit('finishCountdownTimer', this.timeInSeconds)
+      this.$emit('finish-countdown-timer', this.timeInSeconds)
       this.timeInSeconds = 0
     }
   }

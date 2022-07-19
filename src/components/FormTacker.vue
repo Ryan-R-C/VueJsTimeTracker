@@ -4,7 +4,7 @@
       <div class="column is-8" role="form" aria-label="Formulário para criação de uma nova tarefa">
         <input type="text" class="input" name="" id="task" placeholder="Qual tarefa deseja iniciar"/>
       </div>
-      <MainTimer />
+      <MainTimer @finish-countdown-timer="submitTask" />
     </div>
   </div>
 </template>
@@ -17,6 +17,12 @@ export default defineComponent({
   name: 'FormTacker',
   components: {
     MainTimer
+  },
+  methods:{
+    submitTask(pastTime: number){
+      console.log(pastTime)
+
+    }
   }
 });
 </script>
