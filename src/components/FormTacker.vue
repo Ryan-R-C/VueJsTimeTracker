@@ -6,9 +6,10 @@
       </div>
       <div class="column">
         <div class="is-flex is-align-items-center is-justify-content-space-between">
-          <section>
-            <strong strong>{{ timePassed }}</strong>
-          </section>
+
+          <!-- Such as ReactJs, vue has a props inside its components, to declare the params it is just necessary to type -> :selectedParam="value" -->
+          <TimeTacker :timeInSeconds="timeInSeconds"/>
+
          <!-- When this button is clicked the function inside @click will be called --> 
         <button class="button" @click="initiate">
           <span class="icon">
@@ -38,9 +39,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import TimeTacker  from './TimeTracker.vue'
 
 export default defineComponent({
   name: 'FormTacker',
+  components: {
+    TimeTacker
+  },
 
   // the initial state is defined here
   data(){
@@ -48,23 +53,8 @@ export default defineComponent({
     return {
       timeInSeconds: 0,
       timeTracker: 0 
-
     }
 
-  },
-
-  computed: {// monitorate a information, if the information changes, it reacts 
-    /*It is declared as a method, but used as a property*/
-    timePassed () : string {
-      // 0 => '00:00:00'
-      // return new Date(this.timeInSeconds * 1000).toISOString().substr(11, 8)
-
-      const timeInMilliseconds = this.timeInSeconds * 1000
-      const timeInMillisecondsString = new Date(timeInMilliseconds).toISOString()
-
-
-     return timeInMillisecondsString.substr(11, 8) // returns only HH:MM:SS
-    }
   },
 
 
