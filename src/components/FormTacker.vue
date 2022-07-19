@@ -8,7 +8,7 @@
         <div class="is-flex is-align-items-center is-justify-content-space-between">
 
           <!-- Such as ReactJs, vue has a props inside its components, to declare the params it is just necessary to type -> :selectedParam="value" -->
-          <TimeTacker :timeInSeconds="timeInSeconds"/>
+          <CountdownTimer :timeInSeconds="timeInSeconds"/>
 
          <!-- When this button is clicked the function inside @click will be called --> 
         <button class="button" @click="initiate">
@@ -39,12 +39,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TimeTacker  from './TimeTracker.vue'
+import CountdownTimer  from './CountdownTimer.vue'
 
 export default defineComponent({
   name: 'FormTacker',
   components: {
-    TimeTacker
+    CountdownTimer
   },
 
   // the initial state is defined here
@@ -70,6 +70,7 @@ export default defineComponent({
       )
     },
     end(){
+
       clearInterval(this.timeTracker)
 
     }
