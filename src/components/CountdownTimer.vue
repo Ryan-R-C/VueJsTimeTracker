@@ -1,9 +1,7 @@
 <template>
-
-          <section>
-            <strong strong>{{ timePassed }}</strong>
-          </section>
-
+  <section>
+    <strong strong>{{ timePassed }}</strong>
+  </section>
 </template>
 
 
