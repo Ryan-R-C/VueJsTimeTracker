@@ -6,7 +6,7 @@
             <CountdownTimer :timeInSeconds="timeInSeconds" />
 
             <!-- When this button is clicked the function inside @click will be called -->
-            <button class="button" @click="initiate">
+            <button class="button" @click="initiate" :disabled="isRunning">
                 <span class="icon">
                     <i class="fas fa-play">
                     </i>
@@ -15,8 +15,9 @@
                     start
                 </span>
             </button>
-
-            <button class="button" @click="end">
+            <!-- To link a html prop with a state?
+            declare the props with : like        V  -->
+            <button class="button" @click="end" :disabled="!isRunning">
                 <span class="icon">
                     <i class="fas fa-stop">
                     </i>
@@ -45,7 +46,9 @@ export default defineComponent({
     // this return is always necessary!
     return {
       timeInSeconds: 0,
-      timeTracker: 0 
+      timeTracker: 0 ,
+      isRunning: false,
+
     }
 
   },
@@ -54,6 +57,9 @@ export default defineComponent({
   // all methods used in this components are difined here
   methods: {
     initiate(){
+
+      this.isRunning = true
+      
       // 1s == 1000ms
       this.timeTracker = setInterval(
         () => {
@@ -63,6 +69,8 @@ export default defineComponent({
       )
     },
     end(){
+
+      this.isRunning = false
 
       clearInterval(this.timeTracker)
 
