@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="https://icons-for-free.com/download-icon-stopwatch+time+timer+icon-1320166029523848795_512.png" alt=""/> 
+    <img src="https://alura-tracker.vercel.app/img/logo.0acd531c.png" alt=""/> 
   </header>
 </template>
 
@@ -13,28 +13,20 @@ export default defineComponent({
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
+
 <style scoped>
+header {
+  padding: 1rem;
+  background: #0d3b66;
+  background-image: linear-gradient(to bottom, #0d3b66 , #0b2e4f);
+  width: 100%;
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) {
   header {
-      background-image: linear-gradient(to bottom, #0D0221 , #2E2157);
-      width: 100%;
-      height: 100vh;
+    padding: 2.5rem;
+    height: auto;
   }
-
-  /*
-  img{
-    max-width: 300px
-  }
-  
-  
-  */
-
-
-
-  @media screen and (max-width: 420px){
-    header {
-      padding: 2.5rem;
-      height: auto
-    }
-  }
-  
+}
 </style>
