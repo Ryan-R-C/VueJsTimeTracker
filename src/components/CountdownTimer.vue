@@ -9,7 +9,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'TimeTacker',
+  name: 'CountdownTimer',
 
   // the initial state is defined here
   
