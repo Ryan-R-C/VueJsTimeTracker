@@ -2,7 +2,14 @@
   <div class="box">
     <div class="columns">
       <div class="column is-8" role="form" aria-label="Formulário para criação de uma nova tarefa">
-        <input type="text" class="input" name="" id="task" placeholder="Qual tarefa deseja iniciar"/>
+        <input
+        type="text"
+        class="input"
+        name=""
+        id="task"
+        placeholder="Qual tarefa deseja iniciar"
+        v-model="description"
+        />
       </div>
       <MainTimer @finish-countdown-timer="submitTask" />
     </div>
@@ -18,9 +25,21 @@ export default defineComponent({
   components: {
     MainTimer
   },
+  data(){
+    return{
+      description: ''
+    }
+  },
   methods:{
-    submitTask(pastTime: number){
+    submitTask(pastTime: number): void{
+      console.log("pastTime")
       console.log(pastTime)
+
+      console.log("data.description")
+      console.log(this.description)
+
+
+      this.description = ""
 
     }
   }
