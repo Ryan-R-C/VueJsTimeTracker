@@ -25,6 +25,10 @@ export default defineComponent({
   components: {
     MainTimer
   },
+  // returns a value to main component
+  emits:[
+    'toSaveTask'
+  ],
   data(){
     return{
       description: ''
@@ -32,12 +36,11 @@ export default defineComponent({
   },
   methods:{
     submitTask(pastTime: number): void{
-      console.log("pastTime")
-      console.log(pastTime)
 
-      console.log("data.description")
-      console.log(this.description)
-
+      this.$emit('toSaveTask', {
+        timeInSeconds:pastTime,
+        description:this.description,
+      })
 
       this.description = ""
 
