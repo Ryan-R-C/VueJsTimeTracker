@@ -57,6 +57,9 @@ export default defineComponent({
     color: var(--primary-text);
     transition: var(--main-transition);
   }
+  /*
+  It is possible to sync the style using a object inline with js just like react
+  */
 
   
 </style>

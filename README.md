@@ -11,16 +11,15 @@ In this project is used:
 - Vue3: one of the best JS Framework used to build web pages, you can [click here](https://vuejs.org) to read more;
 
 
-## Yarn docs:
+## To debug vue in any navigator: __Vue devtools__
+  - [chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
+  - [firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  
+
 
 ### Project setup
 ```
 yarn install
-```
-
-#### Compiles and hot-reloads for development
-```
-yarn serve
 ```
 
 #### Compiles and minifies for production
@@ -32,6 +31,3 @@ yarn build
 ```
 yarn lint
 ```
-
-#### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
