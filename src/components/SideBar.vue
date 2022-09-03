@@ -1,6 +1,11 @@
 <template>
   <header>
     <img src="https://alura-tracker.vercel.app/img/logo.0acd531c.png" alt=""/> 
+    
+    <button class="button" @click="toggleTheme">
+      {{ themeButtonText }}
+    </button>
+
   </header>
 </template>
 
@@ -8,7 +13,33 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'SideBar'
+  name: 'SideBar',
+
+  data(){
+    return{
+      isDarkModeActive: false
+    }
+  },
+
+  emits: ['toToggleTheme'],
+
+  computed: {
+    themeButtonText (){
+      if(this.isDarkModeActive){
+        return 'Desativar modo escuro'
+      }
+
+      return "Ativar modo escuro"
+    }
+  },
+
+  methods: {
+    toggleTheme () {
+      this.isDarkModeActive = !this.isDarkModeActive
+      
+      this.$emit('toToggleTheme', this.isDarkModeActive)
+    }
+  }
 });
 </script>
 
@@ -22,6 +53,7 @@ header {
   background-image: linear-gradient(to bottom, #0d3b66 , #0b2e4f);
   width: 100%;
   height: 100vh;
+  text-align: center;
 }
 @media only screen and (max-width: 768px) {
   header {
