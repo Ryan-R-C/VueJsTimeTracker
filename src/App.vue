@@ -7,7 +7,12 @@
       <FormTacker @toSaveTask="saveTask" />
       <article class="list">
         <TaskDone v-for="(task, index) in tasks" :key="index" :task="task"/>
+        
+        <StyledBox v-if="isTasksEmpty">
+          Você não está muito produtivo hoje...
+        </StyledBox>
       </article>
+
     </div>
 
 
@@ -23,6 +28,7 @@ import SideBar from './components/SideBar.vue'
 import FormTacker from './components/FormTacker.vue'
 import TaskDone from './components/TaskDone.vue';
 import ITask from './interfaces/ITask'
+import StyledBox from './components/StyledBox.vue';
 
 export default defineComponent({
   name: 'App',
@@ -37,12 +43,19 @@ export default defineComponent({
   components: {
     SideBar,
     FormTacker,
-    TaskDone
-  },
+    TaskDone,
+    StyledBox
+},
   // all methods from this components
   methods:{
     saveTask(task: ITask){
       this.tasks.push(task)
+    }
+  },
+
+  computed: {
+    isTasksEmpty (): boolean {
+      return this.tasks.length === 0
     }
   }
 });
