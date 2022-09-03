@@ -75,6 +75,7 @@ export default defineComponent({
   main {
     --primary-bg : #ffff;
     --primary-text : #363636;
+    --main-transition: background-color 1.5s, color .75s;
   }
 
 
