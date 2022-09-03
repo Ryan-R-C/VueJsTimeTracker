@@ -85,6 +85,7 @@ export default defineComponent({
 
   .content{
     background-color: var(--primary-bg);
+    transition: background-color 1.5s, color .75s;
   } 
 
 </style>

@@ -55,6 +55,7 @@ export default defineComponent({
   .form {
     background-color: var(--primary-bg);
     color: var(--primary-text);
+    transition: background-color 1.5s, color .75s;
   }
 
   
