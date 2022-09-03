@@ -5,7 +5,7 @@
                 {{task.description || "Tarefa sem descrição"}}
             </div>
             <div class="column">
-                <CountdownTimer :timeInSeconds=task.timeInSeconds />
+                <CountdownTimer class="box-timer" :timeInSeconds=task.timeInSeconds />
             </div>
         </div>
     </StyledBox>

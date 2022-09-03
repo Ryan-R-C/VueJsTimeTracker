@@ -1,9 +1,9 @@
 <template>
-  <main class="columns is-gapless is-multiline">
+  <main class="columns is-gapless is-multiline darkmode">
     <div class="column is-one-quarter">
       <SideBar/>
     </div>
-    <div class="column is-three-quarter">
+    <div class="column is-three-quarter  content">
       <FormTacker @toSaveTask="saveTask" />
       <article class="list">
         <TaskDone v-for="(task, index) in tasks" :key="index" :task="task"/>
@@ -66,5 +66,20 @@ export default defineComponent({
     padding: 1.25rem;
     /* margin: 10px; */
   }
+
+  main {
+    --primary-bg : #ffff;
+    --primary-text : #363636;
+  }
+
+
+  main.darkmode {
+    --primary-bg : #2b2d42;
+    --primary-text : #ddd;
+  }
+
+  .content{
+    background-color: var(--primary-bg);
+  } 
 
 </style>
